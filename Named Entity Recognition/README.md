@@ -1,5 +1,7 @@
 # Named-Entity Recognition Using CRF and BERT
 
+This particular repository serves to archive 
+
 Named-entity recognition (NER) is a natural language processing technique. It is also called *entity identification* or *entity extraction*. It identifies named entities in text and classifies them into predefined categories. For example, extracted entities can be the names of organizations, locations, times, quantities, people, monetary values, and more present in text.
 
 With NER, key information is often extracted to learn what a given text is about, or it is used to gather important information to store in a database.
@@ -24,7 +26,7 @@ BERT (Bidirectional Encoder Representations from Transformers) is a model that i
 
 BERT uses transformers, mainly the encoder part. The attention mechanism learns the contextual relationship between words and subwords. Unlike other models, Transformer's encoder learns all sequences at once. The input is a sequence of words (tokens) that are embed into vectors and then proceed to the neural networks. The output is the sequence of tokens that corresponds to the input token of the given sequence.
 
-#CRF (Conditional Random Fields)
+# CRF (Conditional Random Fields)
 CRF is a conditional model class best suited to prediction tasks where the state of neighbors or contextual information affects the current prediction.
 
 The main applications of CRFS are named-entity recognition, part of speech tagging,gene prediction, noise reduction, and object detection problems, to name a few.
