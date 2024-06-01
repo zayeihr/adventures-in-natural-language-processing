@@ -4,12 +4,32 @@ Named-entity recognition (NER) is a natural language processing technique. It is
 
 With NER, key information is often extracted to learn what a given text is about, or it is used to gather important information to store in a database.
 
-NER is used in many applications across many domains. NER is extensively used in biomedical data. For instance, it is used for DNA identification, gene identification, and the identification of drug names and disease names. Figure 1 shows an example of a medical text-related NER that extracts symptoms, patient type, and dosage.
+#Problem Statement
 
-![IMAGE_GIT](https://github.com/sohansai/named-entity-recognition/assets/76840110/ff42aac1-ec61-4f95-8381-e98eaaef452e)
+My goal in this project is to extract named entities from movie trivia. For example, the tags could include movie names, actor names, director names, and movie plots. While general libraries might extract names, they don't typically differentiate between actors and directors, and it can be challenging to extract movie plots. Therefore, I need to build a custom model that predicts these tags for sentences about movies.
 
-NER is also used for optimizing the search queries and ranking search results. It is sometimes combined with topic identification. NER is also used in machine translation.
+Essentially, I have a dataset that talks about movies. It consists of sentences or questions about movies, and each word in the sentence has a predefined tag. I need to build a Named Entity Recognition (NER) model to predict these tags.
 
-There are a lot of pretrained general-purpose libraries that use NER. For example, spaCy-an open source Python library for various NLP tasks. And NLTK (natural language tool kit) has a wrapper for the Stanford NER, which is simpler in many cases.
+Along the way, I found that to achieve this goal, I need to understand the following concepts:
 
-These libraries only extract a certain type of entities, like name, location, and so on. If you need to extract something very domain-specific, such as the name of a medical treatment, it is impossible. You need to build custom NER in those scenarios.
+1. Build the model using various algorithms.
+2. Design a metric to measure the performance of the model.
+3. Understand where the model fails and identify the reasons for the failures.
+4. Fine-tune the model.
+5. Repeat these steps until I achieve the best accuracy on the test data.
+
+# BERT Transformer
+
+BERT (Bidirectional Encoder Representations from Transformers) is a model that is trained on large data sets. This pretrained model can be fine-tuned as per the requirement and used for different tasks such as sentiment analysis, question answering system, sentence classification, and others. BERT transfers learning in NLP, and it is a state-of-the-art method.
+
+BERT uses transformers, mainly the encoder part. The attention mechanism learns the contextual relationship between words and subwords. Unlike other models, Transformer's encoder learns all sequences at once. The input is a sequence of words (tokens) that are embed into vectors and then proceed to the neural networks. The output is the sequence of tokens that corresponds to the input token of the given sequence.
+
+#CRF (Conditional Random Fields)
+CRF is a conditional model class best suited to prediction tasks where the state of neighbors or contextual information affects the current prediction.
+
+The main applications of CRFS are named-entity recognition, part of speech tagging,gene prediction, noise reduction, and object detection problems, to name a few.
+
+In a sequence classification problem, the final goal is to find the probability of y(target) given input of sequence vector x.
+
+Because conditional random fields are conditional models, they apply logistic regression to sequence data.
+
